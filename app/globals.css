@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rp-red: #ef3b24;
+  --rp-red-dark: #b91c1c;
+  --rp-black: #111111;
+  --rp-soft: #fff5f3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--rp-black);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  background:
+    radial-gradient(circle at top left, rgba(239, 59, 36, 0.16), transparent 32rem),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.9), transparent 34rem),
+    linear-gradient(135deg, #fff7f6 0%, #f8fafc 42%, #ffffff 100%);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgba(239, 59, 36, 0.18);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #fecaca;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f87171;
+}
+
+.rp-grid-bg {
+  background-image:
+    linear-gradient(rgba(239, 59, 36, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(239, 59, 36, 0.07) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.animate-rise {
+  animation: rise 0.42s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.rp-mobile-scroll {
+  scrollbar-width: none;
+}
+
+.rp-mobile-scroll::-webkit-scrollbar {
+  display: none;
+}
